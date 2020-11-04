@@ -9,59 +9,8 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
 public class GeraPDF{
-	
-		private String nomPac;
-		private String data;
-		private String nomMed;
-		private String cid;
-		private Document doc;
-
-
-		public GeraPDF() {
-			
-		}
 		
-		public GeraPDF (String nomPac, String data, String nomMed, String periodo, String cid) {
-	    	setNomPac(nomPac);
-			setData(data);
-			setNomMed(nomMed);
-			setCid(cid);
-			setDoc(doc);
-		}
-	
-		public String getNomPac() {
-			return nomPac;
-		}
-		public void setNomPac(String nomPac) {
-			this.nomPac = nomPac;
-		}
-		public String getData() {
-			return data;
-		}
-		public void setData(String data) {
-			this.data = data;
-		}
-		public String getNomMed() {
-			return nomMed;
-		}
-		public void setNomMed(String nomMed) {
-			this.nomMed = nomMed;
-		}
-		public String getCid() {
-			return cid;
-		}
-		public void setCid(String cid) {
-			this.cid = cid;
-		}
-	    public Document getDoc() {
-			return doc;
-		}
-
-		public void setDoc(Document doc) {
-			this.doc = doc;
-		}
-		
-		public void Gera(String nomPac, String data, String nomMed, String periodo, String cid) {
+		public void Gera(String nomPac, String data, String nomMed, String cid, String periodo) {
 		
 		try {
 			
@@ -81,6 +30,23 @@ public class GeraPDF{
 			paragraph.add("ATESTADO MÉDICO");
 			paragraph.setAlignment(Element.ALIGN_CENTER);
 			doc.add(paragraph);
+			
+			
+			Paragraph dados = new Paragraph();
+			
+			dados.add("\n\n\n\n\n\n\n\n\n            Atesto para os devidos fins, a pedido que o(a) Sr(a). " + nomPac
+										+ " inscrito(a) no CPF sob o nº (), paciente sob meus cuidados, foi atentido(a) no dia " + data + 
+												" apresentando quadro referente ao CID " + cid + " e necessitando de " + periodo + " dias de repouso.");
+			
+			dados.setAlignment(Element.ALIGN_JUSTIFIED);
+			
+			Paragraph rodape = new Paragraph();
+			
+			rodape.add("\n\n\n\n\n\n\n\n\n\n\n\n\n            Médico: " + nomMed + "\n\n            CRM 123456");
+			
+			doc.add(dados);
+			doc.add(rodape);
+			
 			doc.close();
 			
 			

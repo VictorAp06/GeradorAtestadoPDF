@@ -44,6 +44,7 @@ public class Principal {
 					
 					System.out.println("\nDeseja fazer pesquisa CID 10? \n 's' para sim 'n' para não" );
 					String tipo = input.next();
+					input.nextLine();
 					if (tipo.equals("s")) {
 						System.out.println("\nDoença:");
 						String cod = input.next();
@@ -52,23 +53,23 @@ public class Principal {
 					}
 					System.out.println("\nDigite o CID: ");
 					String cid = input.nextLine();
-					input.hasNextLine();
+					input.nextLine();
 					
 					System.out.println("\nDigite o periodo: ");
 					String periodo = input.nextLine();
-					input.hasNextLine();
+					input.nextLine();
 					
 					System.out.println("Deseja gerar o PDF? Digite 1 para sim e 2 para não");
 					int opc = 0;
-					
-					input.nextLine();
+
 					opc = input.nextInt();
+					input.nextLine();
 					
 					if(opc == 1) {
 						
 						GeraPDF objPDF = new GeraPDF();
 						System.out.println("Tem que funcionar agora man");
-						objPDF.Gera(nomPac, data, nomMed, cid, "fodase");
+						objPDF.Gera(nomPac, data, nomMed, cid, periodo);
 					}
 					
 					AusenciaTrabalho objAusenciaTrab = new AusenciaTrabalho(nomPac,data, nomMed, cid, periodo);
