@@ -68,7 +68,6 @@ public class Principal {
 					if(opc == 1) {
 						
 						GeraPDF objPDF = new GeraPDF();
-						System.out.println("Tem que funcionar agora man");
 						objPDF.Gera(nomPac, data, nomMed, cid, periodo);
 					}
 					
