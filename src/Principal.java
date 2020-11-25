@@ -68,7 +68,7 @@ public class Principal {
 					if(opc == 1) {
 						
 						GeraPDF objPDF = new GeraPDF();
-						objPDF.Gera(nomPac, data, nomMed, cid, periodo);
+						objPDF.Gera(nomPac, data, nomMed, cid, periodo,"42.129","NEUROLOGIA","MG 16.229", op);
 					}
 					
 					AusenciaTrabalho objAusenciaTrab = new AusenciaTrabalho(nomPac,data, nomMed, cid, periodo);

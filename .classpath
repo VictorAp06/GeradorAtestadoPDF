@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Victor/Documents/GitHub/Git/GeradorAtestadoPDF/itext-5.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/victor/eclipse-workspace/GeradorAtestadoPDF/itext-5.0.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
